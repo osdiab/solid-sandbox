@@ -7,7 +7,6 @@
     "start": "vinxi start",
     "version": "vinxi version",
     "prepare": "panda codegen"
-
   },
   "dependencies": {
     "@solidjs/meta": "^0.29.4",

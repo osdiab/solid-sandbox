@@ -8,10 +8,10 @@ import { css } from "~gen/pandacss/css";
 export default function App() {
   return (
     <Router
-      root={props => (
+      root={(props) => (
         <MetaProvider>
           <Title>SolidStart - Basic</Title>
-          <a href="/" class={css({color: "red", fontSize: "2xl"})}>Index</a>
+          <a href="/" class={css({ color: "red", fontSize: "2xl" })}>Index</a>
           <a href="/about">About</a>
           <Suspense>{props.children}</Suspense>
         </MetaProvider>
