@@ -2,6 +2,8 @@
 	"extends": "@tsconfig/strictest/tsconfig.json",
 	"compilerOptions": {
 		"composite": true,
+		"tsBuildInfoFile": ".tsbuildinfo",
+		"noEmit": true,
 		"target": "ESNext",
 		"module": "ESNext",
 		"moduleResolution": "bundler",
@@ -15,5 +17,6 @@
 			"~/*": ["./src/*"],
 			"~gen/*": ["./gen/*"]
 		}
-	}
+	},
+	"include": ["src/**/*", "gen/**/*"]
 }
