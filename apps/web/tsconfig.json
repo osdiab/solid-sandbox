@@ -1,5 +1,7 @@
 {
+	"extends": "@tsconfig/strictest/tsconfig.json",
 	"compilerOptions": {
+		"composite": true,
 		"target": "ESNext",
 		"module": "ESNext",
 		"moduleResolution": "bundler",
@@ -8,10 +10,7 @@
 		"jsx": "preserve",
 		"jsxImportSource": "solid-js",
 		"allowJs": true,
-		"strict": true,
-		"noEmit": true,
 		"types": ["vinxi/types/client"],
-		"isolatedModules": true,
 		"paths": {
 			"~/*": ["./src/*"],
 			"~gen/*": ["./gen/*"]

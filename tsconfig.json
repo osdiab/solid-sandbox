@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"noEmit": true
+	},
+	"references": [
+		{ "path": "./apps/main-db" },
+		{ "path": "./apps/web" },
+		{ "path": "./libs/runtime-environment" },
+		{ "path": "./libs/valibot-schemas" }
+	]
+}
