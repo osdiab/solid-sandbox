@@ -17,7 +17,9 @@
   },
   "devDependencies": {
     "@pandacss/dev": "^0.47.0",
-    "vite-tsconfig-paths": "^5.0.1"
+    "typescript": "5.6.3",
+    "vite-tsconfig-paths": "^5.0.1",
+    "@types/bun": "latest"
   },
   "engines": {
     "node": ">=18"
