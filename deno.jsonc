@@ -1,3 +1,0 @@
-{
-    "fmt": { "exclude": ["./gen", "package.json"] }
-}
