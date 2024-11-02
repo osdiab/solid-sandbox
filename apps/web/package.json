@@ -7,7 +7,7 @@
     "build": "bun run:vinxi build",
     "start": "bun run:vinxi start",
     "version": "bun run:vinxi version",
-    "prepare": "bun run --bun panda codegen",
+    "prepare": "bun --bun panda codegen",
     "doppler:run:base": "doppler run --project web --config dev",
     "doppler:run": "bun  doppler:run:base --fallback-only",
     "doppler:refresh": "bun doppler:run:base -- -- echo 'Refreshed doppler secrets'"

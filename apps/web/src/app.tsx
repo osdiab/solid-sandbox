@@ -2,8 +2,9 @@ import { MetaProvider, Title } from "@solidjs/meta";
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
-import "./app.css";
 import { css } from "~gen/pandacss/css";
+
+import "./app.css";
 
 export default function App() {
 	return (
