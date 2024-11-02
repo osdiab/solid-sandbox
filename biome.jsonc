@@ -7,7 +7,7 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"ignore": ["gen", "package.json"]
+		"ignore": ["gen", "package.json", ".vscode"]
 	},
 	"formatter": {
 		"enabled": true,

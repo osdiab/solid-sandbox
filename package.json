@@ -4,8 +4,8 @@
   "workspaces": ["apps/*"],
   "scripts": {
     "run:biome": "bun --bun biome",
-    "format": "bun run:biome format",
-    "lint": "bun run:biome lint"
+    "check": "bun run:biome check",
+    "check:fix": "bun check --write"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4"
