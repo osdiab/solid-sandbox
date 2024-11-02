@@ -1,5 +1,12 @@
 {
   "name": "@solid-sandbox/monorepo",
   "version": "0.0.1",
-  "workspaces": ["apps/*"]
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "run:biome": "bun --bun biome",
+    "format": "bun run:biome format"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
 }
