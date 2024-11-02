@@ -5,7 +5,7 @@
         "run:p": "bun --bun run-p",
         "dev:postgres": "docker compose up",
         "dev": "bun doppler:run -- bun run:p dev:*",
-        "db:push": "bun doppler:run -- bun --bun drizzle-kit push",
+        "db:push": "bun doppler:run -- bun --bun drizzle-kit --config src/drizzle.config.ts push",
         "doppler:run:base": "doppler run --project main-db --config dev",
         "doppler:run": "bun doppler:run:base --fallback-only --",
         "doppler:refresh": "bun doppler:run:base -- -- echo 'Refreshed doppler secrets'"

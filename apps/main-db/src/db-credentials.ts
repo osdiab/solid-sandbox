@@ -1,7 +1,7 @@
 import { runtimeEnvironment } from "@solid-sandbox/runtime-environment";
 import {
-	requiredStringSchema,
 	integerStringSchema,
+	requiredStringSchema,
 } from "@solid-sandbox/valibot-schemas/string";
 import * as v from "valibot";
 
