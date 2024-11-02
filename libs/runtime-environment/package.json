@@ -1,0 +1,9 @@
+{
+	"name": "@solid-sandbox/runtime-environment",
+	"version": "0.0.1",
+	"exports": "./src/index.ts",
+	"devDependencies": {
+		"@tsconfig/strictest": "2.0.5",
+		"valibot": "^0.42.1"
+	}
+}

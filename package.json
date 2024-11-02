@@ -1,7 +1,7 @@
 {
   "name": "@solid-sandbox/monorepo",
   "version": "0.0.1",
-  "workspaces": ["apps/*"],
+  "workspaces": ["apps/*", "libs/*"],
   "scripts": {
     "run:biome": "bun --bun biome",
     "check": "bun run:biome check",
