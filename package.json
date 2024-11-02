@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "workspaces": ["apps/*", "libs/*"],
   "scripts": {
-    "run:biome": "bun --bun biome",
-    "check": "bun run:biome check",
-    "check:fix": "bun check --write",
+    "check:types": "tsc --build --incremental --noEmit",
+    "check:style": "bun --bun biome check",
+    "check:style:fix": "bun check:style --write",
+    "check:fix": "bun check:style:fix && bun check:types",
+    "check": "bun check:style && bun check:types",
     "dev": "bun --filter '*' dev"
   },
   "devDependencies": {
