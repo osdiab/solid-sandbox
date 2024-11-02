@@ -1,15 +1,23 @@
 {
     "name": "@solid-sandbox/main-db",
+    "version": "0.0.1",
     "scripts": {
         "run:p": "bun --bun run-p",
         "dev:postgres": "docker compose up",
-        "dev": "bun run:p dev:*"
+        "dev": "bun doppler:run -- bun run:p dev:*",
+        "db:push": "bun doppler:run -- bun --bun drizzle-kit push",
+        "doppler:run:base": "doppler run --project main-db --config dev",
+        "doppler:run": "bun doppler:run:base --fallback-only --",
+        "doppler:refresh": "bun doppler:run:base -- -- echo 'Refreshed doppler secrets'"
     },
     "dependencies": {
         "drizzle-orm": "^0.36.0",
-        "pg": "^8.13.1"
-    },
-    "devDependencies": {
+		"pg": "^8.13.1",
+		"@solid-sandbox/runtime-environment": "workspace:*",
+		"@solid-sandbox/valibot-schemas": "workspace:*"
+	},
+	"devDependencies": {
+        "@tsconfig/strictest": "2.0.5",
         "@types/pg": "^8.11.10",
         "drizzle-kit": "^0.27.1",
         "npm-run-all2": "^7.0.1",
