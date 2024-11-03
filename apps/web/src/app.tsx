@@ -4,7 +4,7 @@ import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
 import { css } from "~gen/pandacss/css";
 
-import "./app.css";
+import "~/app.css";
 
 export default function App() {
 	return (

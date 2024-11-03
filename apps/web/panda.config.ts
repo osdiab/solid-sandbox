@@ -1,21 +1,80 @@
-import { defineConfig } from "@pandacss/dev";
+import { defineConfig, defineThemeContract } from "@pandacss/dev";
 
-const buttonAccentColorVariable = "--accent-color";
-const buttonTextOnAccentBackgroundColorVariable = "--text-on-accent-bg-color";
+const buttonAccentBackgroundColorVariable = "--btn-accent-bg";
+const buttonTextOnPageBackgroundVariable = "--btn-text-on-page";
+const buttonTextOnAccentBackgroundVariable = "--btn-text-on-accent";
 
 export default defineConfig({
-	// Whether to use css reset
-	preflight: true,
+	preflight: true, // Whether to use css reset
 
-	// Where to look for your css declarations
 	include: ["./src/**/*.{js,jsx,ts,tsx}"],
-
-	// Files to exclude
 	exclude: [],
 
-	// Useful for theme customization
+	conditions: {
+		extend: {
+			light: '[data-theme="light"] &',
+			dark: '[data-theme="dark"] &',
+		},
+	},
+
 	theme: {
 		extend: {
+			semanticTokens: {
+				colors: {
+					text: {
+						body: {
+							value: {
+								_light: "{colors.gray.900}",
+								_dark: "{colors.gray.100}",
+							},
+						},
+						brand: {
+							value: {
+								_light: "{colors.blue.500}",
+								_dark: "{colors.blue.400}",
+							},
+						},
+						onBrandBackground: {
+							value: {
+								_light: "{colors.white}",
+								_dark: "{colors.gray.900}",
+							},
+						},
+						danger: {
+							value: {
+								_light: "{colors.red.500}",
+								_dark: "{colors.red.400}",
+							},
+						},
+						onDangerBackground: {
+							value: {
+								_light: "white",
+								_dark: "white",
+							},
+						},
+					},
+					background: {
+						body: {
+							value: {
+								_light: "{colors.gray.50}",
+								_dark: "{colors.gray.900}",
+							},
+						},
+						brand: {
+							value: {
+								_light: "{colors.blue.500}",
+								_dark: "{colors.blue.400}",
+							},
+						},
+						danger: {
+							value: {
+								_light: "{colors.red.500}",
+								_dark: "{colors.red.400}",
+							},
+						},
+					},
+				},
+			},
 			recipes: {
 				button: {
 					base: {
@@ -28,33 +87,41 @@ export default defineConfig({
 					variants: {
 						role: {
 							primary: {
-								[buttonAccentColorVariable]: "token(colors.blue.500)",
-								[buttonTextOnAccentBackgroundColorVariable]: "white",
+								[buttonAccentBackgroundColorVariable]:
+									"{colors.background.brand}",
+								[buttonTextOnAccentBackgroundVariable]:
+									"{colors.text.onBrandBackground}",
+								[buttonTextOnPageBackgroundVariable]: "{colors.text.brand}",
 							},
 							secondary: {
-								[buttonAccentColorVariable]: "token(colors.gray.500)",
-								[buttonTextOnAccentBackgroundColorVariable]: "white",
+								[buttonAccentBackgroundColorVariable]:
+									"{colors.background.body}",
+								[buttonTextOnPageBackgroundVariable]: "{colors.text.body}",
+								[buttonTextOnAccentBackgroundVariable]: "white",
 							},
 							danger: {
-								[buttonAccentColorVariable]: "token(colors.red.500)",
-								[buttonTextOnAccentBackgroundColorVariable]: "white",
+								[buttonAccentBackgroundColorVariable]:
+									"{colors.background.danger}",
+								[buttonTextOnPageBackgroundVariable]: "{colors.text.danger}",
+								[buttonTextOnAccentBackgroundVariable]:
+									"{colors.text.onDangerBackground}",
 							},
 						},
 						type: {
 							filled: {
-								background: `var(${buttonAccentColorVariable})`,
-								borderColor: `var(${buttonAccentColorVariable})`,
-								color: `var(${buttonTextOnAccentBackgroundColorVariable})`,
+								background: `var(${buttonAccentBackgroundColorVariable})`,
+								borderColor: `var(${buttonAccentBackgroundColorVariable})`,
+								color: `var(${buttonTextOnAccentBackgroundVariable})`,
 							},
 							outline: {
 								background: "transparent",
-								borderColor: `var(${buttonAccentColorVariable})`,
-								color: `var(${buttonAccentColorVariable})`,
+								borderColor: `var(${buttonTextOnPageBackgroundVariable})`,
+								color: `var(${buttonTextOnPageBackgroundVariable})`,
 							},
 							text: {
 								background: "transparent",
 								borderColor: "transparent",
-								color: `var(${buttonAccentColorVariable})`,
+								color: `var(${buttonTextOnPageBackgroundVariable})`,
 							},
 						},
 					},

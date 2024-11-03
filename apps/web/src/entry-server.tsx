@@ -1,5 +1,6 @@
 // @refresh reload
 import { StartServer, createHandler } from "@solidjs/start/server";
+import { css } from "~gen/pandacss/css";
 
 export default createHandler(() => (
 	<StartServer
@@ -11,7 +12,33 @@ export default createHandler(() => (
 					<link rel="icon" href="/favicon.ico" />
 					{assets}
 				</head>
-				<body>
+				<body
+					class={css({
+						backgroundColor: "background.body",
+						color: "text.body",
+					})}
+				>
+					<script
+						type="text/javascript"
+						innerHTML={`(function() {
+	var colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+	var setTheme = function(dark) {
+		document.body.setAttribute('data-theme', dark ? 'dark' : 'light');
+	};
+
+	setTheme(colorScheme.matches);
+
+	if (colorScheme.addEventListener) {
+		colorScheme.addEventListener('change', function(e) {
+			setTheme(e.matches);
+		});
+	} else {
+		colorScheme.addListener(function(e) {
+			setTheme(e.matches);
+		});
+	}
+})();`}
+					/>
 					<div id="app">{children}</div>
 					{scripts}
 				</body>
