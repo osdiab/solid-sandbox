@@ -1,5 +1,6 @@
 // @refresh reload
 import { StartServer, createHandler } from "@solidjs/start/server";
+import { themeHTMLAttribute } from "~/constants";
 import { css } from "~gen/pandacss/css";
 
 export default createHandler(() => (
@@ -23,7 +24,7 @@ export default createHandler(() => (
 						innerHTML={`(function() {
 	var colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
 	var setTheme = function(dark) {
-		document.body.setAttribute('data-theme', dark ? 'dark' : 'light');
+		document.body.setAttribute('${themeHTMLAttribute}', dark ? 'dark' : 'light');
 	};
 
 	setTheme(colorScheme.matches);

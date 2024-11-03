@@ -1,4 +1,5 @@
-import { defineConfig, defineThemeContract } from "@pandacss/dev";
+import { defineConfig } from "@pandacss/dev";
+import { themeHTMLAttribute } from "./src/constants";
 
 const buttonAccentBackgroundColorVariable = "--btn-accent-bg";
 const buttonTextOnPageBackgroundVariable = "--btn-text-on-page";
@@ -12,8 +13,8 @@ export default defineConfig({
 
 	conditions: {
 		extend: {
-			light: '[data-theme="light"] &',
-			dark: '[data-theme="dark"] &',
+			light: `[${themeHTMLAttribute}="light"] &`,
+			dark: `[${themeHTMLAttribute}="dark"] &`,
 		},
 	},
 
