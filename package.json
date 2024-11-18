@@ -4,7 +4,7 @@
   "workspaces": ["apps/*", "libs/*"],
   "scripts": {
     "check:types": "tsc --build --incremental --noEmit",
-    "check:style": "bun --bun biome check",
+    "check:style": "biome check",
     "check:style:fix": "bun check:style --write",
     "check:fix": "bun check:style:fix && bun check:types",
     "check": "bun check:style && bun check:types",
